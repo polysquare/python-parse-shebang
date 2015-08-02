@@ -1,0 +1,8 @@
+AppVeyor
+PATHEXT
+POSIX
+PyPI
+docstring
+env
+filename
+parseshebang

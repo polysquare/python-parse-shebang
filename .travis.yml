@@ -1,0 +1,31 @@
+language: python
+sudo: false
+cache:
+  directories:
+  - container
+python:
+- '2.7'
+- '3.4'
+- pypy
+- pypy3
+install:
+- eval $(curl -LSs --retry 100 --connect-timeout 3 public-travis-scripts.polysquare.org/bootstrap.py
+  | python /dev/stdin -d container -s setup/python/setup.py -e bash -p /dev/stdout)
+script:
+- polysquare_run check/python/check.py
+before_cache:
+- polysquare_cleanup
+after_success:
+- polysquare_run coverage/python/coverage.py
+before_deploy:
+- polysquare_run deploy/python/deploy.py
+deploy:
+  provider: pypi
+  user: Sam.Spilsbury
+  password:
+    secure: gxIKURqPoY612RPDl32myi0UYuH78xuwC5808M/mq/7T7mjOP8MD0DW2BhAMUxKJ3gUHYm7SY4ZsS0q4q46Wg8huId8kij5HxLT6hLi5qogqMEkAhTbE53yjcXYOf3Tvo4wtL3By2IhzMUv6dJf16cTSKQUz9FfLaaVuAB8BjtqFiR9gYZY5+rp24uS1bJGCo/AXxCMi+p/3n7zK5bpFmtUII8t+9MqRpOJMH1TUAx1Yk5Jbq6gspqdm4+r8qDgJVQ8HUAaInuMDvzPuD09islrRxiQKa477YvQgTOIpD/f0mTWDe1ics5QEpWYAq5pBNdP4wyrP2lvLJRKsmly4Eud5gNvHNXKgoaaZ2chUwS2IXGR6jCxzn7PrxhQW5Zd6/Z/GbS4VuIxXVG8Y62VozTjaoOSn2fPdYdYmWuQIOCNJF648dwO4tTdZFEgPRAtVbUH6vPQFFXXlaP9SK5vaQXLaLEgIkrHuRhu+Gc9dx4knFrT90drIogy+QrnMVd+03mpy8S8bBYOxTtWvxIQJUAytxSHN9ndxzObD5YnKwT1hpr/5BXH6qwvOonfTl4T1Q4vYwMOIRLbq6TP34s3TivAwJtsreM8tf14LUxBgDswj+v1b9J2P/+XoIROfHgP97+D7uZW8Qc53r6eV3/ZPeM6Cma5Wlnc0gWlh8TcIyJM=
+  on:
+    repo: polysquare/python-parse-shebang
+env:
+  global:
+    secure: AReFlTHhCRNPYJyRY4D6j1eAYVKXM04AQ9kdvS8uyGcjZ3lZvxHbYwu7ki+0RTbAQoA++688cNgfdTyNQ0ytJsScXma+I78c6FEwpHaHX+3mJbYQ8vOifJTe8Es80eLJt6vjAel9yqMaJX6vh1a/EyunmxUh11V3FTouVkYw/4qs5f/LesFq38YKxufyexgsYw2Fq+M8sG4/Ti7fFI3KgCaBtu0qAta5P0VZyL1eEtpaJylcHCHItGz45JXI9iz0fgUrsR6k9XfB00bxdfWpp57YwO1kS1/XIBQ6vLhriZQF1Z7XuDduoF/Oao8m5VAVA7zUZXdMtA477EzWxyOgLpVtJg51OZR6y3N6WdHabfLbh/opYUI5aJvpyue6LffzQbSQD7lfFJYHv1+M7VjD+LowV8Rq/leNA2m5v08i0akAVjenPEqfU131JjpreQMYdozi1vpmTB325L5kKqvZ/dFmbgGg1I8t95M+fScKiOZOkCJHzZ6Tnlk4y93vifcrxgViPbw0SuHAPFpkjph+IegE7lTZqi7FWwb5ySmd6wMuU3hT0wigjyaiDA0GCIr3b8SzWBsS2zxWFwgM3EURqTTLwUpY9VPSCvtXEACb9sX1H8AQuXiKOS9ewGvMbzVEkW0XvrvkJT8Gt5GvRsCkgtDCu2sQJcOaxEUrLsOanjs=
