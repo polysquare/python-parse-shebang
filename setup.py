@@ -8,7 +8,7 @@
 from setuptools import find_packages, setup
 
 setup(name="parse-shebang",
-      version="0.0.4",
+      version="0.0.5",
       description="""Parse shebangs and return their components.""",
       long_description_markdown_filename="README.md",
       author="Sam Spilsbury",
@@ -36,7 +36,7 @@ setup(name="parse-shebang",
                     "nose-parameterized>=0.5.0",
                     "setuptools-green>=0.0.13",
                     "six"],
-          "polysquarelint": ["polysquare-setuptools-lint>=0.0.42"],
+          "polysquarelint": ["polysquare-setuptools-lint>=0.0.52"],
           "upload": ["setuptools-markdown"]
       },
       test_suite="nose.collector",
