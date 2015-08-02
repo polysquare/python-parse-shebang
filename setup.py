@@ -36,7 +36,7 @@ setup(name="parse-shebang",
                     "nose-parameterized>=0.5.0",
                     "setuptools-green>=0.0.21",
                     "six"],
-          "polysquarelint": ["polysquare-setuptools-lint>=0.0.29"],
+          "polysquarelint": ["polysquare-setuptools-lint>=0.0.22"],
           "upload": ["setuptools-markdown"]
       },
       test_suite="nose.collector",
