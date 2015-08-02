@@ -34,7 +34,7 @@ setup(name="parse-shebang",
           "green": ["testtools",
                     "nose",
                     "nose-parameterized>=0.5.0",
-                    "setuptools-green>=0.0.21",
+                    "setuptools-green>=0.0.13",
                     "six"],
           "polysquarelint": ["polysquare-setuptools-lint>=0.0.22"],
           "upload": ["setuptools-markdown"]
