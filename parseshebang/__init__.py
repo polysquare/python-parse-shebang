@@ -23,7 +23,9 @@ def _parse(fileobj):
 
     if part == "#!":
         shebang = fileobj.readline().strip().split(" ")
-        if platform.system() == "Windows":
+        if (platform.system() == "Windows" and
+                len(shebang) and
+                os.path.basename(shebang[0]) == "env"):
             return shebang[1:]
 
         return shebang
