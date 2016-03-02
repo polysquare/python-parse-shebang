@@ -26,7 +26,6 @@ from testtools import ExpectedException, TestCase
 
 # suppress(too-few-public-methods)
 class Function(object):
-
     """Wrapper for a function."""
 
     def __init__(self, func, description):
@@ -76,7 +75,6 @@ def _print_mode(func, num, params):
 
 
 class TestShebangParser(TestCase):
-
     """Unit test fixture for parse() function."""
 
     def setUp(self):

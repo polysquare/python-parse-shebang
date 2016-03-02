@@ -21,7 +21,6 @@ from testtools import TestCase
 
 
 class TestAcceptance(TestCase):
-
     """Acceptance tests for parseshebang."""
 
     def setUp(self):
