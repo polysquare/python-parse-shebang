@@ -31,12 +31,6 @@ setup(name="parse-shebang",
       packages=find_packages(exclude=["test"]),
       install_requires=["setuptools"],
       extras_require={
-          "green": ["testtools",
-                    "nose",
-                    "nose-parameterized>=0.5.0",
-                    "setuptools-green>=0.0.13",
-                    "six"],
-          "polysquarelint": ["polysquare-setuptools-lint>=0.0.62"],
           "upload": ["setuptools-markdown"]
       },
       test_suite="nose.collector",
