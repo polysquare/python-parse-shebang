@@ -8,7 +8,7 @@
 from setuptools import find_packages, setup
 
 setup(name="parse-shebang",
-      version="0.0.12",
+      version="0.0.13",
       description="""Parse shebangs and return their components.""",
       long_description_markdown_filename="README.md",
       author="Sam Spilsbury",
