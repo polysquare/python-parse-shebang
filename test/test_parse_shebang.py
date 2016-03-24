@@ -5,6 +5,8 @@
 # See /LICENCE.md for Copyright information
 """Unit tests for the parseshebang module."""
 
+import io
+
 import os
 
 import platform
@@ -150,3 +152,27 @@ class TestShebangParser(TestCase):
         """Raise RuntimeError when weird object is passed in."""
         with ExpectedException(RuntimeError):
             parse(object())
+
+    # suppress(no-self-use)
+    def test_unicode(self):
+        """A filename can be text which in python 2 is not `str`."""
+        tmpdir = mkdtemp()
+        self.addCleanup(shutil.rmtree, tmpdir)
+
+        filename = os.path.join(tmpdir, u"foo.sh")
+        with io.open(filename, "w") as f:
+            f.write(u"#!/usr/bin/python\n")
+
+        self.assertEqual(parse(filename), ["/usr/bin/python"])
+
+    # suppress(no-self-use)
+    def test_filename_without_extension(self):
+        """Regression test for no-PATHEXT no-extension."""
+        tmpdir = mkdtemp()
+        self.addCleanup(shutil.rmtree, tmpdir)
+
+        filename = os.path.join(tmpdir, u"foo")
+        with io.open(filename, "w") as f:
+            f.write(u"#!/usr/bin/python\n")
+
+        self.assertEqual(parse(filename), ["/usr/bin/python"])

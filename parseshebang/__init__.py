@@ -14,6 +14,8 @@ import platform
 
 import shlex
 
+import six
+
 
 def _parse(fileobj):
     """Parse fileobj for a shebang."""
@@ -47,8 +49,11 @@ def parse(file_to_parse):  # suppress(unused-function)
     """
     if hasattr(file_to_parse, "read"):
         return _parse(file_to_parse)
-    elif isinstance(file_to_parse, str):
-        path_ext = os.environ.get("PATHEXT", "").split(os.pathsep)
+    elif isinstance(file_to_parse, six.string_types):
+        if "PATHEXT" in os.environ:
+            path_ext = os.environ["PATHEXT"].split(os.pathsep)
+        else:
+            path_ext = ()
         if os.path.splitext(file_to_parse)[1] in path_ext:
             return []
 
