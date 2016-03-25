@@ -29,7 +29,7 @@ setup(name="parse-shebang",
       license="MIT",
       keywords="development",
       packages=find_packages(exclude=["test"]),
-      install_requires=["setuptools"],
+      install_requires=["six"],
       extras_require={
           "upload": ["setuptools-markdown"]
       },
