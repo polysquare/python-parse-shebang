@@ -111,12 +111,16 @@ class TestShebangParser(TestCase):
                          ["python"])
 
     @parameterized.expand(MODES, testcase_func_doc=_print_mode)
-    def test_parse_multi_part_shebang_windows_nonenv(self, mode):
+    def test_parse_multi_part_shebang_nonenv(self, mode):
         """Parse a multi-part shebang, keeping non-env."""
-        if platform.system() != "Windows":
-            self.skipTest("""Discarding env only makes sense on Windows.""")
-
         self.assertEqual(parse(mode("#!/usr/bin/nonenv python\n",
+                                    self.addCleanup)),
+                         ["/usr/bin/nonenv", "python"])
+
+    @parameterized.expand(MODES, testcase_func_doc=_print_mode)
+    def test_parse_multi_part_shebang_extra_spaces(self, mode):
+        """Parse a multi-part shebang, keeping non-env."""
+        self.assertEqual(parse(mode("#!/usr/bin/nonenv    python\n",
                                     self.addCleanup)),
                          ["/usr/bin/nonenv", "python"])
 

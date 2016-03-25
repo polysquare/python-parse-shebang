@@ -12,6 +12,8 @@ import os
 
 import platform
 
+import shlex
+
 
 def _parse(fileobj):
     """Parse fileobj for a shebang."""
@@ -22,7 +24,7 @@ def _parse(fileobj):
         part = ""
 
     if part == "#!":
-        shebang = fileobj.readline().strip().split(" ")
+        shebang = shlex.split(fileobj.readline().strip())
         if (platform.system() == "Windows" and
                 len(shebang) and
                 os.path.basename(shebang[0]) == "env"):
