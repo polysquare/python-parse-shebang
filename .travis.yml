@@ -10,7 +10,7 @@ matrix:
   - os: linux
     python: '3.5'
   - os: linux
-    python: 'pypy3'
+    python: pypy3
   - os: osx
     language: generic
     env: PYTHON=python PIP=pip
@@ -39,4 +39,4 @@ deploy:
     repo: polysquare/python-parse-shebang
 env:
   global:
-    secure: migYlNtHCbIoYaQcCGtEQ9LsSpUkTSJ7o9UmDk6TVIDpee9/rfdfwnPV3rCGDJHvbTGHs7i7KkSuH/+lWy67bRhHxPTIZMWRPC1gpa0hDn2UAFNWhT7naSOH99wVkIrQGXglSihWMKkYZAcj8Par/FWu4TfveMH4qyRdC1Sb0zNRNMfQxfVB70B3OzMMfCzagVhuO2asTTyAIi0zZI8M1PF6YyumOZOg8sKSCgyyVAKdE0DQd1LaOc0AWnSKWERc3QNKFFXbCUiNf77IuY7g/74seibZEoYoA9q3aQyzZukzMhHYejW7H5Rtv/Wc7SnOgLgJw0sublP/DroPYFoHDVyADlskOXv0a3lCBVChBuxK6MwrAjHOAVf2Hv9AK+JEbVqo2WYbBtkJM/2sKDKcm3PgtmOitdYnrwdPbyGEUSTMO/K6e/onAzkuDi0OUYe1vpaD6We+dLKaYVBkhaVT6PGcgHZXAz5mq7rCfNkqVuJu6LZCCjY7duhlfQktCFwF/Gn5wFqnVvcJo+CmYrm3LkyizRPSPpCxcL3fSQuPLJZI8DchVPIOF+OW4uvUwgwmIlxr0b5DPATDmgw/yeJ+k+y0u1rNp58De7Pdyfzs7aQ44/0gFkMHCMpZxIMw91B8WNXz9m1pnhOXs8lFbdIiqeGzPdr1f5C5vblCaeSbAFM=
+    secure: dZ5yt0RR7eJ7kEmPEasnq43Dp3ztrDLervoobDCsGnROGmfupb7k/oWI6y23OyH9ALE2hdbtgwHTn1DlqM8q6zq5/bTmmIXcz6ru+yWhmNQPoAcNwdSEfXL+4YCf72wr7BcZYS3AsdTm0e212s7zUoNUQGtnZKKLs1k/8msuP8kEUwkdDVYWLcqwZ7bIZLlpLx0nMw81uW5m8fj+4IB6l/WyWK/40Q1y0vrQszlzl/YzYtImUpBh/xvYluWX/5s2N+oAT71a4O9XjX8Je2QR8+0xkw9MtWRa1AXBGqMZ+myCbca9hqR/XAaAUBU9pzhwXncpLt9Xtt/avFL1OPQqDQoyQX5MMGONzdWHYZWXSUEj0Q7y0NAD22JTJh8Vk8QrwVxCEGyGFwCY6vosj3NtloIB+pVgPiYc2zJFzfazjgTYidbyQpRcxrVbIk1USYXii9DoskopIYZJUIXhME0EPjbVY4TGPs7Ur5+aQP3jFW2yUooeTshXGqASzMSKyI59c86n/NcFY/wFfWNXTGGc8RYCBCY/edXylTAr0MuoJu7iGWGsF4IuIM+sVjNLjON2gdHy3Sfm9WNUJmBe8jNNbYI20rK/lfsw25clF3tzPrBHff2yFTMOnBiXhoQTIa2u2Lecrv1zWRxkK7e1hAjuHxxcGPGFdyl84TROpnLNwoY=
